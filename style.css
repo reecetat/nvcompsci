@@ -1,0 +1,157 @@
+body {
+  margin: 0;
+  background-color: rgb(225, 225, 0);
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 18px;
+}
+
+button {
+  margin: 0;
+  padding: 7px 15px;
+  appearance: none;
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 0;
+}
+
+#app {
+  display: block;
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+}
+
+.quiz {
+  position: relative;
+  display: block;
+
+  width: 90%;
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.quiz-container {
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: auto;
+  height: auto;
+
+  text-align: left;
+}
+
+.quiz-wrapper {
+  position: relative;
+
+  padding: 20px 25px;
+  border-radius: 6px;
+  margin: 30px auto;
+
+  background-color: #fff;
+}
+
+.quiz-list {
+  margin: 0;
+  padding: 0;
+
+  list-style-type: none;
+}
+
+.quiz-list-input {
+  background: yellow;
+}
+
+.quiz-question {
+  margin: 0 auto 1em;
+
+  font-family: "Garamond", "Baskerville", "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+  font-style: italic;
+}
+
+.quiz-next {
+  display: block;
+
+  margin: 20px auto 5px;
+  border: 1px solid yellow;
+  border-radius: 6px;
+
+  /*font-size: 16px;*/
+
+  background: linear-gradient(#fff 30%, black);
+}
+
+.quiz-next:hover {
+  cursor: pointer;
+  animation: bounce 1s cubic-bezier(.6,-0.28,.74,.05);
+}
+
+@keyframes bounce {
+  0% {
+    transform: rotate(5deg);
+  }
+
+  10% {
+    transform: rotate(-5deg);
+  }
+
+  20% {
+    transform: rotate(3deg);
+  }
+
+  30% {
+    transform: rotate(-3deg);
+  }
+
+  40% {
+    transform: rotate(1deg);
+  }
+
+  50% {
+    transform: rotate(-1deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.swipe-enter,
+.swipe-fade-enter {
+  transform: translateX(60vw);
+}
+
+.swipe-enter-active,
+.swipe-leave-active {
+  transition: transform .5s ease;
+}
+
+.swipe-enter-to,
+.swipe-fade-enter-to,
+.swipe-leave {
+  transform: translateX(0vw);
+}
+
+.swipe-leave-to {
+  transform: translateX(-60vw);
+}
+
+.swipe-fade-leave {
+  opacity: 1;
+}
+
+.swipe-fade-leave-to {
+  opacity: 0;
+}
+
+.swipe-fade-enter-active,
+.swipe-fade-leave-active {
+  transition:  transform .5s ease, opacity .25s ease;
+}

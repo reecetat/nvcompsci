@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<script src="vue.js"></script>
+<link rel="stylesheet" href="style.css">
+<div id="app" v-cloak>
+
+  <div class="quiz">
+      <h1>{{ quiz.title }}</h1>
+    
+      <span class="pink">
+      
+      </span>
+
+      <div class="quiz-container" v-for="(question, index) in quiz.questions">
+        <transition-group name="swipe">
+          <div class="quiz-wrapper" v-show="index === questionIndex" :key="index">
+            <h2 class="quiz-question">{{ question.text }}</h2>
+
+            <ul class="quiz-list">
+              <li class="quiz-list-item" v-for="response in question.response">
+                <label>
+                  <input type="radio"
+                    :value="response.value"
+                    :name="index"
+                    v-model="userResponses[index]"
+                    class="quiz-list-input">
+                    {{response.text}}
+                </label>
+              </li>
+            </ul>
+
+            <button v-on:click="next(userResponses[index])" class="quiz-next">
+              next ➡
+            </button>
+          </div>
+        <transition-group>
+      </div>
+
+      <transition name="swipe-fade">
+        <div v-show="questionIndex === quiz.questions.length">
+          <h2>
+        "You need to go to {{ result() }}" 
+          </h2>
+          <p>
+            "your restaraunt is {{ result() }}." 
+          </p>
+          <button v-on:click="restart">
+            Retake
+          </button>
+        </div>
+        <script src="client.js"></script>
+
+
+        
